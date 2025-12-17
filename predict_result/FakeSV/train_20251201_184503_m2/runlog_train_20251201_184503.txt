@@ -1,0 +1,19 @@
+Trainer init arguments summary
+timestamp: 20251201_184503
+mode: train
+model_name: FakingRecipe
+device: 0
+lr: 0.0001
+beta_c: 1.0
+beta_n: 1.0
+early_stop: 5
+num_epochs: 30
+save_param_path: ./checkpoints/fakesv/
+save_predict_result_path(root): ./predict_result/FakeSV/
+run_dir: ./predict_result/FakeSV/train_20251201_184503
+scheduler_option: False
+start_epoch: 0
+save_threshold: 0.7
+dataloader[train] size: 2536
+dataloader[test] size: 542
+dataloader[val] size: 546

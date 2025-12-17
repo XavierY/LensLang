@@ -1,0 +1,3 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+stats.lighting.color_temperature,cool_tone,63,0.14285714285714285,0.14285714285714285,0.0
+stats.lighting.color_temperature,warm_tone,236,0.19915254237288135,0.19915254237288135,0.0

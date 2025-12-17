@@ -1,0 +1,8 @@
+dataset,group,field,kind,value,mismatch_pct
+FakeSV,analysis,analysis.video_analysis.color_tone,categorical_scalar,neutral_tone,0.0005518763796909492
+FakeSV,analysis,analysis.video_analysis.composition_styles,categorical_multilabel,centered_composition,0.0005512679162072767
+FakeTT,analysis,analysis.video_analysis.composition_styles,categorical_multilabel,low_angle_perspective,0.0005015045135406219
+FakeSV,analysis,analysis.video_analysis.overall_style,categorical_multilabel,tense_mood,0.00020429009193054137
+FakeTT,analysis,analysis.video_analysis.overall_style,categorical_multilabel,solemn_mood,0.0005474452554744526
+FakeSV,analysis,analysis.video_analysis.shot_types,categorical_multilabel,close_shot,0.0005514199062586159
+FakeSV,stats,stats.lighting.color_temperature,categorical_scalar,neutral_tone,0.0005518763796909492

@@ -1,0 +1,9 @@
+dataset,model,epoch,train_elapsed_sec,val_elapsed_sec,train_elapsed_hms,val_elapsed_hms,test_elapsed_hms,test_elapsed_sec,notes
+FakeSV,M1,0,381.0,91.0,06:21,01:31,,,
+FakeSV,M1,1,385.0,87.0,06:25,01:27,,,
+FakeSV,M1,2,373.0,86.0,06:13,01:26,,,
+FakeSV,M1,3,370.0,86.0,06:10,01:26,,,
+FakeSV,M1,4,369.0,86.0,06:09,01:26,,,
+FakeSV,M1,5,369.0,87.0,06:09,01:27,,,
+FakeSV,M1,6,371.0,86.0,06:11,01:26,,,
+FakeSV,M1,ALL,2618.0,609.0,43:38,10:09,01:55,115.0,TRAIN/VAL elapsed: first tqdm 100% after each phase marker; TEST elapsed: test tqdm 100% preferred (fallback to last unassigned 100% / 'Testing complete in').

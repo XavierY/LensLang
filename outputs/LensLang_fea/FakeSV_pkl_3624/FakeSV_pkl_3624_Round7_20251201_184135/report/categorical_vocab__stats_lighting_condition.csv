@@ -1,0 +1,5 @@
+token,index_in_block
+unknown,0
+bright_sunny,1
+dim_low_light,2
+overcast_neutral,3

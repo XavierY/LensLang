@@ -1,0 +1,11 @@
+index,kind,field,value_or_transform
+0,numeric_logz,stats.avg_shot_len_sec,log1p+z+clip
+1,numeric_logz,stats.cuts_per_30s,log1p+z+clip
+2,numeric_z,flag.is_fast_rhythm,z
+3,numeric_z,flag.is_warm_tone,z
+4,numeric_z,flag.is_high_contrast,z
+5,numeric_z,flag.is_pan_horizontal,z
+6,numeric_z,flag.style_high_risk,z
+7,numeric_z,flag.style_low_risk,z
+8,numeric_z,rate_per_shot.pan_horizontal,z
+9,numeric_z,rate_per_shot.static_shot,z

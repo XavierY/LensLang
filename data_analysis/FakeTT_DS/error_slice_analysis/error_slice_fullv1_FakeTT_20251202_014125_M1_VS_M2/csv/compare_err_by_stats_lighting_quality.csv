@@ -1,0 +1,4 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+stats.lighting.quality,high_contrast,222,0.18018018018018017,0.18468468468468469,0.004504504504504514
+stats.lighting.quality,medium_contrast,70,0.15714285714285714,0.14285714285714285,-0.01428571428571429
+stats.lighting.quality,soft_low_contrast,7,0.7142857142857143,0.7142857142857143,0.0

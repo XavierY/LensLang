@@ -1,0 +1,551 @@
+Namespace(dataset='fakett', mode='train', epoches=30, batch_size=128, early_stop=5, seed=2023, gpu='0', lr=0.0001, alpha=1.0, beta=1.0, inference_ckp=None, path_ckp='./checkpoints/', path_tb='./tensorboard/', use_lenslang=True, lenslang_root='/data/hyan671/yhproject/FakingRecipe/fea/fakett/preprocess_lenslang')
+data load time: 10.80
+--------------------------------------------------
+Epoch 0/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:38,  3.83s/it] 18%|█▊        | 2/11 [00:06<00:30,  3.39s/it] 27%|██▋       | 3/11 [00:10<00:27,  3.44s/it] 36%|███▋      | 4/11 [00:13<00:23,  3.34s/it] 45%|████▌     | 5/11 [00:16<00:19,  3.32s/it] 55%|█████▍    | 6/11 [00:19<00:16,  3.23s/it] 64%|██████▎   | 7/11 [00:23<00:13,  3.29s/it] 73%|███████▎  | 8/11 [00:26<00:09,  3.20s/it] 82%|████████▏ | 9/11 [00:28<00:06,  3.02s/it] 91%|█████████ | 10/11 [00:31<00:02,  2.98s/it]100%|██████████| 11/11 [00:34<00:00,  2.92s/it]100%|██████████| 11/11 [00:34<00:00,  3.15s/it]
+Train Loss: 2.0189 
+{'auc': 0.5046902372989329, 'f1': 0.4782970917567929, 'recall': 0.5046902372989329, 'precision': 0.5085688039836729, 'acc': 0.6130653266331658}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:04<00:08,  4.26s/it] 67%|██████▋   | 2/3 [00:08<00:03,  3.96s/it]100%|██████████| 3/3 [00:09<00:00,  2.77s/it]100%|██████████| 3/3 [00:09<00:00,  3.12s/it]
+Val Loss: 2.0747 
+{'auc': 0.49569198845182244, 'f1': 0.36885095447870775, 'recall': 0.49569198845182244, 'precision': 0.45897766323024053, 'acc': 0.5384615384615384}
+--------------------------------------------------
+Epoch 1/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:32,  3.20s/it] 18%|█▊        | 2/11 [00:06<00:28,  3.15s/it] 27%|██▋       | 3/11 [00:09<00:26,  3.28s/it] 36%|███▋      | 4/11 [00:13<00:23,  3.37s/it] 45%|████▌     | 5/11 [00:16<00:19,  3.25s/it] 55%|█████▍    | 6/11 [00:19<00:16,  3.27s/it] 64%|██████▎   | 7/11 [00:22<00:13,  3.26s/it] 73%|███████▎  | 8/11 [00:25<00:09,  3.13s/it] 82%|████████▏ | 9/11 [00:29<00:06,  3.19s/it] 91%|█████████ | 10/11 [00:32<00:03,  3.22s/it]100%|██████████| 11/11 [00:35<00:00,  3.27s/it]100%|██████████| 11/11 [00:35<00:00,  3.24s/it]
+Train Loss: 1.9577 
+{'auc': 0.5507564898869247, 'f1': 0.5241393527107813, 'recall': 0.5507564898869247, 'precision': 0.6217992815103569, 'acc': 0.6669059583632448}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:04<00:08,  4.10s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.93s/it]100%|██████████| 3/3 [00:09<00:00,  2.70s/it]100%|██████████| 3/3 [00:09<00:00,  3.05s/it]
+Val Loss: 2.0712 
+{'auc': 0.5251037531577049, 'f1': 0.42662851073873026, 'recall': 0.5251037531577047, 'precision': 0.6229019434628975, 'acc': 0.5652173913043478}
+--------------------------------------------------
+Epoch 2/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:34,  3.44s/it] 18%|█▊        | 2/11 [00:07<00:31,  3.52s/it] 27%|██▋       | 3/11 [00:10<00:27,  3.49s/it] 36%|███▋      | 4/11 [00:13<00:23,  3.43s/it] 45%|████▌     | 5/11 [00:17<00:20,  3.49s/it] 55%|█████▍    | 6/11 [00:20<00:17,  3.45s/it] 64%|██████▎   | 7/11 [00:24<00:13,  3.38s/it] 73%|███████▎  | 8/11 [00:27<00:10,  3.38s/it] 82%|████████▏ | 9/11 [00:30<00:06,  3.21s/it] 91%|█████████ | 10/11 [00:33<00:03,  3.18s/it]100%|██████████| 11/11 [00:35<00:00,  2.98s/it]100%|██████████| 11/11 [00:35<00:00,  3.26s/it]
+Train Loss: 1.8857 
+{'auc': 0.5568243350852047, 'f1': 0.5233300190934055, 'recall': 0.5568243350852047, 'precision': 0.6769715864805499, 'acc': 0.6805455850681982}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.49s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.49s/it]100%|██████████| 3/3 [00:08<00:00,  2.38s/it]100%|██████████| 3/3 [00:08<00:00,  2.68s/it]
+Val Loss: 1.9742 
+{'auc': 0.6126623962468423, 'f1': 0.5973287865870986, 'recall': 0.6126623962468423, 'precision': 0.6542809488510007, 'acc': 0.6354515050167224}
+--------------------------------------------------
+Epoch 3/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.97s/it] 18%|█▊        | 2/11 [00:05<00:26,  2.90s/it] 27%|██▋       | 3/11 [00:08<00:23,  2.93s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.87s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.92s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.96s/it] 64%|██████▎   | 7/11 [00:20<00:12,  3.01s/it] 73%|███████▎  | 8/11 [00:23<00:08,  2.93s/it] 82%|████████▏ | 9/11 [00:26<00:05,  2.91s/it] 91%|█████████ | 10/11 [00:29<00:02,  2.97s/it]100%|██████████| 11/11 [00:32<00:00,  2.85s/it]100%|██████████| 11/11 [00:32<00:00,  2.91s/it]
+Train Loss: 1.7783 
+{'auc': 0.6576365663322186, 'f1': 0.6659865064999178, 'recall': 0.6576365663322186, 'precision': 0.7520499108734402, 'acc': 0.7437185929648241}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.47s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.50s/it]100%|██████████| 3/3 [00:08<00:00,  2.40s/it]100%|██████████| 3/3 [00:08<00:00,  2.69s/it]
+Val Loss: 1.9250 
+{'auc': 0.6861918080115481, 'f1': 0.6840186660650462, 'recall': 0.6861918080115481, 'precision': 0.7180631868131868, 'acc': 0.7023411371237458}
+--------------------------------------------------
+Epoch 4/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.93s/it] 18%|█▊        | 2/11 [00:05<00:24,  2.74s/it] 27%|██▋       | 3/11 [00:08<00:21,  2.69s/it] 36%|███▋      | 4/11 [00:11<00:19,  2.81s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.90s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.89s/it] 64%|██████▎   | 7/11 [00:19<00:11,  2.82s/it] 73%|███████▎  | 8/11 [00:22<00:08,  2.92s/it] 82%|████████▏ | 9/11 [00:25<00:05,  2.96s/it] 91%|█████████ | 10/11 [00:28<00:02,  2.98s/it]100%|██████████| 11/11 [00:31<00:00,  2.86s/it]100%|██████████| 11/11 [00:31<00:00,  2.87s/it]
+Train Loss: 1.6587 
+{'auc': 0.770576524924351, 'f1': 0.7849890617403986, 'recall': 0.770576524924351, 'precision': 0.815838604989616, 'acc': 0.8176597272074659}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.45s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.35s/it]100%|██████████| 3/3 [00:07<00:00,  2.36s/it]100%|██████████| 3/3 [00:07<00:00,  2.63s/it]
+Val Loss: 1.8920 
+{'auc': 0.7063560086611331, 'f1': 0.7073964497041421, 'recall': 0.7063560086611331, 'precision': 0.7108064516129032, 'acc': 0.7123745819397993}
+saved ./checkpoints/fakett/FakingRecipe_val_4_0.7074
+--------------------------------------------------
+Epoch 5/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:30,  3.09s/it] 18%|█▊        | 2/11 [00:06<00:27,  3.07s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.12s/it] 36%|███▋      | 4/11 [00:12<00:20,  2.96s/it] 45%|████▌     | 5/11 [00:15<00:18,  3.14s/it] 55%|█████▍    | 6/11 [00:18<00:14,  2.97s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.87s/it] 73%|███████▎  | 8/11 [00:23<00:08,  2.89s/it] 82%|████████▏ | 9/11 [00:26<00:05,  2.93s/it] 91%|█████████ | 10/11 [00:29<00:02,  2.90s/it]100%|██████████| 11/11 [00:32<00:00,  2.80s/it]100%|██████████| 11/11 [00:32<00:00,  2.92s/it]
+Train Loss: 1.5589 
+{'auc': 0.8055183946488294, 'f1': 0.8157407407407408, 'recall': 0.8055183946488294, 'precision': 0.8317796610169492, 'acc': 0.8391959798994975}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.46s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.47s/it]100%|██████████| 3/3 [00:08<00:00,  2.39s/it]100%|██████████| 3/3 [00:08<00:00,  2.68s/it]
+Val Loss: 1.8726 
+{'auc': 0.7278058462648863, 'f1': 0.7287243694429324, 'recall': 0.7278058462648864, 'precision': 0.7307200292397661, 'acc': 0.7324414715719063}
+saved ./checkpoints/fakett/FakingRecipe_val_5_0.7287
+--------------------------------------------------
+Epoch 6/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:32,  3.21s/it] 18%|█▊        | 2/11 [00:06<00:28,  3.12s/it] 27%|██▋       | 3/11 [00:09<00:25,  3.18s/it] 36%|███▋      | 4/11 [00:12<00:21,  3.09s/it] 45%|████▌     | 5/11 [00:15<00:18,  3.14s/it] 55%|█████▍    | 6/11 [00:18<00:15,  3.09s/it] 64%|██████▎   | 7/11 [00:21<00:12,  3.15s/it] 73%|███████▎  | 8/11 [00:24<00:09,  3.04s/it] 82%|████████▏ | 9/11 [00:27<00:05,  2.95s/it] 91%|█████████ | 10/11 [00:30<00:02,  2.95s/it]100%|██████████| 11/11 [00:33<00:00,  2.82s/it]100%|██████████| 11/11 [00:33<00:00,  3.00s/it]
+Train Loss: 1.4536 
+{'auc': 0.8180681637203375, 'f1': 0.8278595336619261, 'recall': 0.8180681637203375, 'precision': 0.8425592860678354, 'acc': 0.8492462311557789}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.37s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.56s/it]100%|██████████| 3/3 [00:08<00:00,  2.41s/it]100%|██████████| 3/3 [00:08<00:00,  2.70s/it]
+Val Loss: 1.8485 
+{'auc': 0.7327453987730062, 'f1': 0.7344429449692607, 'recall': 0.7327453987730062, 'precision': 0.7472445850105425, 'acc': 0.7424749163879598}
+saved ./checkpoints/fakett/FakingRecipe_val_6_0.7344
+--------------------------------------------------
+Epoch 7/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.97s/it] 18%|█▊        | 2/11 [00:05<00:26,  2.96s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.09s/it] 36%|███▋      | 4/11 [00:12<00:21,  3.05s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.92s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.99s/it] 64%|██████▎   | 7/11 [00:21<00:12,  3.14s/it] 73%|███████▎  | 8/11 [00:24<00:09,  3.19s/it] 82%|████████▏ | 9/11 [00:27<00:06,  3.11s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.11s/it]100%|██████████| 11/11 [00:33<00:00,  3.02s/it]100%|██████████| 11/11 [00:33<00:00,  3.05s/it]
+Train Loss: 1.3407 
+{'auc': 0.8537107819716515, 'f1': 0.862487258793258, 'recall': 0.8537107819716516, 'precision': 0.8744809130149921, 'acc': 0.8786791098348887}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.62s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.64s/it]100%|██████████| 3/3 [00:08<00:00,  2.49s/it]100%|██████████| 3/3 [00:08<00:00,  2.80s/it]
+Val Loss: 1.8371 
+{'auc': 0.7253924575965356, 'f1': 0.7268774932069145, 'recall': 0.7253924575965356, 'precision': 0.7412602607436021, 'acc': 0.7357859531772575}
+--------------------------------------------------
+Epoch 8/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.94s/it] 18%|█▊        | 2/11 [00:05<00:26,  2.94s/it] 27%|██▋       | 3/11 [00:09<00:26,  3.26s/it] 36%|███▋      | 4/11 [00:12<00:22,  3.15s/it] 45%|████▌     | 5/11 [00:15<00:19,  3.20s/it] 55%|█████▍    | 6/11 [00:18<00:16,  3.20s/it] 64%|██████▎   | 7/11 [00:22<00:12,  3.22s/it] 73%|███████▎  | 8/11 [00:25<00:09,  3.26s/it] 82%|████████▏ | 9/11 [00:28<00:06,  3.03s/it] 91%|█████████ | 10/11 [00:31<00:03,  3.07s/it]100%|██████████| 11/11 [00:33<00:00,  2.95s/it]100%|██████████| 11/11 [00:33<00:00,  3.09s/it]
+Train Loss: 1.2274 
+{'auc': 0.8875139353400223, 'f1': 0.8924287130310504, 'recall': 0.8875139353400223, 'precision': 0.8981839944640819, 'acc': 0.9038047379755922}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.77s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.63s/it]100%|██████████| 3/3 [00:08<00:00,  2.48s/it]100%|██████████| 3/3 [00:08<00:00,  2.80s/it]
+Val Loss: 1.8280 
+{'auc': 0.7492556838686395, 'f1': 0.7498190863862506, 'recall': 0.7492556838686395, 'precision': 0.7506577753583742, 'acc': 0.7525083612040134}
+saved ./checkpoints/fakett/FakingRecipe_val_8_0.7498
+--------------------------------------------------
+Epoch 9/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:30,  3.04s/it] 18%|█▊        | 2/11 [00:06<00:27,  3.05s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.05s/it] 36%|███▋      | 4/11 [00:12<00:21,  3.06s/it] 45%|████▌     | 5/11 [00:15<00:19,  3.23s/it] 55%|█████▍    | 6/11 [00:18<00:16,  3.20s/it] 64%|██████▎   | 7/11 [00:22<00:12,  3.23s/it] 73%|███████▎  | 8/11 [00:25<00:09,  3.16s/it] 82%|████████▏ | 9/11 [00:28<00:06,  3.10s/it] 91%|█████████ | 10/11 [00:31<00:03,  3.22s/it]100%|██████████| 11/11 [00:34<00:00,  3.09s/it]100%|██████████| 11/11 [00:34<00:00,  3.13s/it]
+Train Loss: 1.1223 
+{'auc': 0.9120640229335881, 'f1': 0.9146743650996737, 'recall': 0.9120640229335881, 'precision': 0.9174972914409534, 'acc': 0.9231873653984207}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.81s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.71s/it]100%|██████████| 3/3 [00:08<00:00,  2.51s/it]100%|██████████| 3/3 [00:08<00:00,  2.84s/it]
+Val Loss: 1.8798 
+{'auc': 0.7566537351136774, 'f1': 0.7588709677419355, 'recall': 0.7566537351136774, 'precision': 0.7716529793735676, 'acc': 0.7658862876254181}
+saved ./checkpoints/fakett/FakingRecipe_val_9_0.7589
+--------------------------------------------------
+Epoch 10/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.98s/it] 18%|█▊        | 2/11 [00:06<00:28,  3.22s/it] 27%|██▋       | 3/11 [00:09<00:25,  3.18s/it] 36%|███▋      | 4/11 [00:12<00:21,  3.01s/it] 45%|████▌     | 5/11 [00:15<00:17,  2.96s/it] 55%|█████▍    | 6/11 [00:18<00:14,  2.97s/it] 64%|██████▎   | 7/11 [00:21<00:11,  2.98s/it] 73%|███████▎  | 8/11 [00:24<00:09,  3.01s/it] 82%|████████▏ | 9/11 [00:27<00:06,  3.08s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.11s/it]100%|██████████| 11/11 [00:33<00:00,  2.95s/it]100%|██████████| 11/11 [00:33<00:00,  3.02s/it]
+Train Loss: 1.0200 
+{'auc': 0.9421086160216596, 'f1': 0.9442634382788029, 'recall': 0.9421086160216595, 'precision': 0.9465483959922787, 'acc': 0.949748743718593}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.52s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.41s/it]100%|██████████| 3/3 [00:08<00:00,  2.42s/it]100%|██████████| 3/3 [00:08<00:00,  2.70s/it]
+Val Loss: 1.9087 
+{'auc': 0.7639841212558643, 'f1': 0.7654422047136669, 'recall': 0.7639841212558643, 'precision': 0.7690574712643679, 'acc': 0.7692307692307693}
+saved ./checkpoints/fakett/FakingRecipe_val_10_0.7654
+--------------------------------------------------
+Epoch 11/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:26,  2.69s/it] 18%|█▊        | 2/11 [00:06<00:27,  3.11s/it] 27%|██▋       | 3/11 [00:09<00:26,  3.37s/it] 36%|███▋      | 4/11 [00:12<00:22,  3.23s/it] 45%|████▌     | 5/11 [00:16<00:19,  3.33s/it] 55%|█████▍    | 6/11 [00:19<00:16,  3.24s/it] 64%|██████▎   | 7/11 [00:22<00:12,  3.17s/it] 73%|███████▎  | 8/11 [00:25<00:09,  3.15s/it] 82%|████████▏ | 9/11 [00:28<00:06,  3.11s/it] 91%|█████████ | 10/11 [00:31<00:03,  3.19s/it]100%|██████████| 11/11 [00:34<00:00,  3.00s/it]100%|██████████| 11/11 [00:34<00:00,  3.13s/it]
+Train Loss: 0.9527 
+{'auc': 0.9567924828794395, 'f1': 0.9579040098071359, 'recall': 0.9567924828794394, 'precision': 0.9590484029540206, 'acc': 0.9619526202440776}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.73s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.94s/it]100%|██████████| 3/3 [00:09<00:00,  2.70s/it]100%|██████████| 3/3 [00:09<00:00,  3.02s/it]
+Val Loss: 1.9984 
+{'auc': 0.7566311800793938, 'f1': 0.7582145989225635, 'recall': 0.7566311800793937, 'precision': 0.7627956393200296, 'acc': 0.7625418060200669}
+--------------------------------------------------
+Epoch 12/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:34,  3.43s/it] 18%|█▊        | 2/11 [00:06<00:27,  3.10s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.08s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.88s/it] 45%|████▌     | 5/11 [00:15<00:17,  2.99s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.93s/it] 64%|██████▎   | 7/11 [00:21<00:12,  3.03s/it] 73%|███████▎  | 8/11 [00:24<00:09,  3.06s/it] 82%|████████▏ | 9/11 [00:27<00:06,  3.06s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.14s/it]100%|██████████| 11/11 [00:33<00:00,  2.98s/it]100%|██████████| 11/11 [00:33<00:00,  3.03s/it]
+Train Loss: 0.8707 
+{'auc': 0.9698917025003982, 'f1': 0.9698917025003981, 'recall': 0.9698917025003981, 'precision': 0.9698917025003981, 'acc': 0.9727207465900933}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.61s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.51s/it]100%|██████████| 3/3 [00:08<00:00,  2.45s/it]100%|██████████| 3/3 [00:08<00:00,  2.74s/it]
+Val Loss: 2.0363 
+{'auc': 0.7725324792493685, 'f1': 0.7714478417266186, 'recall': 0.7725324792493684, 'precision': 0.7709921952094734, 'acc': 0.7725752508361204}
+saved ./checkpoints/fakett/FakingRecipe_val_12_0.7714
+--------------------------------------------------
+Epoch 13/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.95s/it] 18%|█▊        | 2/11 [00:05<00:27,  3.01s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.08s/it] 36%|███▋      | 4/11 [00:12<00:21,  3.09s/it] 45%|████▌     | 5/11 [00:15<00:18,  3.03s/it] 55%|█████▍    | 6/11 [00:18<00:14,  2.97s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.93s/it] 73%|███████▎  | 8/11 [00:24<00:09,  3.17s/it] 82%|████████▏ | 9/11 [00:27<00:06,  3.21s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.13s/it]100%|██████████| 11/11 [00:34<00:00,  3.21s/it]100%|██████████| 11/11 [00:34<00:00,  3.11s/it]
+Train Loss: 0.8421 
+{'auc': 0.9756808408982323, 'f1': 0.9754498789918891, 'recall': 0.9756808408982323, 'precision': 0.975220249297657, 'acc': 0.9777458722182341}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.79s/it] 67%|██████▋   | 2/3 [00:07<00:03,  3.60s/it]100%|██████████| 3/3 [00:08<00:00,  2.51s/it]100%|██████████| 3/3 [00:08<00:00,  2.82s/it]
+Val Loss: 2.1569 
+{'auc': 0.7731640202093107, 'f1': 0.773640975808183, 'recall': 0.7731640202093107, 'precision': 0.7742775613733128, 'acc': 0.7759197324414716}
+saved ./checkpoints/fakett/FakingRecipe_val_13_0.7736
+--------------------------------------------------
+Epoch 14/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:30,  3.07s/it] 18%|█▊        | 2/11 [00:05<00:26,  2.97s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.01s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.93s/it] 45%|████▌     | 5/11 [00:15<00:18,  3.10s/it] 55%|█████▍    | 6/11 [00:18<00:15,  3.05s/it] 64%|██████▎   | 7/11 [00:21<00:11,  2.98s/it] 73%|███████▎  | 8/11 [00:23<00:08,  2.94s/it] 82%|████████▏ | 9/11 [00:26<00:05,  3.00s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.14s/it]100%|██████████| 11/11 [00:33<00:00,  3.09s/it]100%|██████████| 11/11 [00:33<00:00,  3.04s/it]
+Train Loss: 0.7979 
+{'auc': 0.9814062748845358, 'f1': 0.980239621190843, 'recall': 0.9814062748845358, 'precision': 0.9791062856625306, 'acc': 0.9820531227566404}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.60s/it] 67%|██████▋   | 2/3 [00:08<00:04,  4.11s/it]100%|██████████| 3/3 [00:09<00:00,  2.80s/it]100%|██████████| 3/3 [00:09<00:00,  3.11s/it]
+Val Loss: 2.1967 
+{'auc': 0.7774494767232045, 'f1': 0.7774494767232045, 'recall': 0.7774494767232045, 'precision': 0.7774494767232045, 'acc': 0.7792642140468228}
+saved ./checkpoints/fakett/FakingRecipe_val_14_0.7774
+--------------------------------------------------
+Epoch 15/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:25,  2.59s/it] 18%|█▊        | 2/11 [00:05<00:23,  2.62s/it] 27%|██▋       | 3/11 [00:08<00:22,  2.82s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.90s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.89s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.90s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.92s/it] 73%|███████▎  | 8/11 [00:23<00:09,  3.17s/it] 82%|████████▏ | 9/11 [00:27<00:06,  3.25s/it] 91%|█████████ | 10/11 [00:30<00:03,  3.14s/it]100%|██████████| 11/11 [00:33<00:00,  3.09s/it]100%|██████████| 11/11 [00:33<00:00,  3.01s/it]
+Train Loss: 0.7659 
+{'auc': 0.9883580187928014, 'f1': 0.9881209091896237, 'recall': 0.9883580187928014, 'precision': 0.9878851521515788, 'acc': 0.9892318736539842}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.36s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.48s/it]100%|██████████| 3/3 [00:08<00:00,  2.41s/it]100%|██████████| 3/3 [00:08<00:00,  2.69s/it]
+Val Loss: 2.3140 
+{'auc': 0.7627661494045471, 'f1': 0.7645857343359539, 'recall': 0.762766149404547, 'precision': 0.770452223976228, 'acc': 0.7692307692307693}
+--------------------------------------------------
+Epoch 16/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:02<00:29,  2.98s/it] 18%|█▊        | 2/11 [00:05<00:26,  2.98s/it] 27%|██▋       | 3/11 [00:08<00:23,  2.96s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.98s/it] 45%|████▌     | 5/11 [00:14<00:16,  2.81s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.92s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.96s/it] 73%|███████▎  | 8/11 [00:22<00:08,  2.78s/it] 82%|████████▏ | 9/11 [00:26<00:05,  2.86s/it] 91%|█████████ | 10/11 [00:29<00:02,  2.91s/it]100%|██████████| 11/11 [00:31<00:00,  2.89s/it]100%|██████████| 11/11 [00:31<00:00,  2.90s/it]
+Train Loss: 0.7470 
+{'auc': 0.9899426660296226, 'f1': 0.9897047879643406, 'recall': 0.9899426660296226, 'precision': 0.9894682650083191, 'acc': 0.990667623833453}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.50s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.38s/it]100%|██████████| 3/3 [00:07<00:00,  2.38s/it]100%|██████████| 3/3 [00:07<00:00,  2.66s/it]
+Val Loss: 2.4274 
+{'auc': 0.7584806928906532, 'f1': 0.7604605383629373, 'recall': 0.7584806928906532, 'precision': 0.7682835471486094, 'acc': 0.7658862876254181}
+--------------------------------------------------
+Epoch 17/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:30,  3.01s/it] 18%|█▊        | 2/11 [00:06<00:27,  3.07s/it] 27%|██▋       | 3/11 [00:09<00:24,  3.02s/it] 36%|███▋      | 4/11 [00:11<00:20,  2.92s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.94s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.93s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.89s/it] 73%|███████▎  | 8/11 [00:23<00:08,  2.89s/it] 82%|████████▏ | 9/11 [00:26<00:05,  2.95s/it] 91%|█████████ | 10/11 [00:29<00:02,  2.84s/it]100%|██████████| 11/11 [00:31<00:00,  2.75s/it]100%|██████████| 11/11 [00:31<00:00,  2.88s/it]
+Train Loss: 0.7271 
+{'auc': 0.9925625099538142, 'f1': 0.9920844357162989, 'recall': 0.9925625099538142, 'precision': 0.9916117898178846, 'acc': 0.9928212491026561}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:06,  3.22s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.48s/it]100%|██████████| 3/3 [00:08<00:00,  2.40s/it]100%|██████████| 3/3 [00:08<00:00,  2.67s/it]
+Val Loss: 2.5714 
+{'auc': 0.7542177914110428, 'f1': 0.7564013035381751, 'recall': 0.754217791411043, 'precision': 0.7778846153846154, 'acc': 0.7658862876254181}
+--------------------------------------------------
+Epoch 18/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+  9%|▉         | 1/11 [00:03<00:32,  3.25s/it] 18%|█▊        | 2/11 [00:05<00:25,  2.88s/it] 27%|██▋       | 3/11 [00:08<00:22,  2.76s/it] 36%|███▋      | 4/11 [00:11<00:19,  2.80s/it] 45%|████▌     | 5/11 [00:14<00:17,  2.95s/it] 55%|█████▍    | 6/11 [00:17<00:14,  2.91s/it] 64%|██████▎   | 7/11 [00:20<00:11,  2.95s/it] 73%|███████▎  | 8/11 [00:23<00:08,  2.93s/it] 82%|████████▏ | 9/11 [00:26<00:05,  2.85s/it] 91%|█████████ | 10/11 [00:29<00:02,  2.91s/it]100%|██████████| 11/11 [00:31<00:00,  2.86s/it]100%|██████████| 11/11 [00:31<00:00,  2.89s/it]
+Train Loss: 0.7211 
+{'auc': 0.9915910176779742, 'f1': 0.9920690409062132, 'recall': 0.9915910176779742, 'precision': 0.9925525221577853, 'acc': 0.9928212491026561}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:03<00:07,  3.52s/it] 67%|██████▋   | 2/3 [00:06<00:03,  3.42s/it]100%|██████████| 3/3 [00:07<00:00,  2.36s/it]100%|██████████| 3/3 [00:07<00:00,  2.66s/it]
+Val Loss: 2.5013 
+{'auc': 0.7694875496210755, 'f1': 0.7701040253279059, 'recall': 0.7694875496210755, 'precision': 0.7710034476501542, 'acc': 0.7725752508361204}
+early stop at epoch 18
+Training complete in 13m 14s
+Best model on val: epoch14_0.7774494767232045
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:135: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:351: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader_lenslang.py:363: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+ 33%|███▎      | 1/3 [00:04<00:08,  4.19s/it] 67%|██████▋   | 2/3 [00:08<00:04,  4.18s/it]100%|██████████| 3/3 [00:09<00:00,  2.89s/it]100%|██████████| 3/3 [00:09<00:00,  3.24s/it]
+Testing complete in 0m 10s
+Saved test result to: ./predict_result/FakeTT/train_20251205_213645/label_train_20251205_213645.csv
+0.7759197324414716
+              precision    recall  f1-score   support
+
+        real     0.8595    0.7950    0.8260       200
+        fake     0.6404    0.7374    0.6854        99
+
+    accuracy                         0.7759       299
+   macro avg     0.7499    0.7662    0.7557       299
+weighted avg     0.7869    0.7759    0.7794       299
+
+[[159  41]
+ [ 26  73]]
+None
+{'auc': 0.7661868686868687, 'f1': 0.7557100176818488, 'recall': 0.7661868686868687, 'precision': 0.749905168326221, 'acc': 0.7759197324414716}
+PYTHON_EXIT_CODE_FAKETT=0

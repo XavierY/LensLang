@@ -1,0 +1,4 @@
+section,sv_missing_rate,tt_missing_rate,sv_n,sv_mean,sv_std,sv_min,sv_p01,sv_p05,sv_p25,sv_p50,sv_p75,sv_p95,sv_p99,sv_max,tt_n,tt_mean,tt_std,tt_min,tt_p01,tt_p05,tt_p25,tt_p50,tt_p75,tt_p95,tt_p99,tt_max,ks_stat,wasserstein,group,field,kind,psi,bins,winsor_lo,winsor_hi,plot_range_lo,plot_range_hi,bin_left,bin_right,sv_pct,tt_pct,pct_diff
+summary,0.0,0.0,3624.0,0.48951434878587197,1.3972933415948114,0.0,0.0,0.0,0.0,0.0,1.0,2.0,6.0,21.0,1991.0,0.45554997488699145,1.2064234935522542,0.0,0.0,0.0,0.0,0.0,0.0,2.0,5.0,15.0,0.01990912749758017,0.0636354212055793,stats,stats.movement_counts.dolly_out,numeric_scalar,0.0021436969197467567,10.0,0.01,0.99,0.0,6.0,,,,,
+bin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.0,1.0,0.7450331125827815,0.7649422400803616,0.019909127497580115
+bin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1.0,6.0,0.25496688741721857,0.23505775991963837,-0.019909127497580198

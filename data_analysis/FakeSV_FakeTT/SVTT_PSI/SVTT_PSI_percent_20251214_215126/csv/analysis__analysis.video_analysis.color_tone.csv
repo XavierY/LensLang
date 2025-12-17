@@ -1,0 +1,4 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+analysis,analysis.video_analysis.color_tone,categorical_scalar,cool_tone,0.29304635761589404,0.24460070316423907,-0.04844565445165497,0.015518059461738211
+analysis,analysis.video_analysis.color_tone,categorical_scalar,neutral_tone,0.0005518763796909492,0.0,-0.0005518763796909492,0.015518059461738211
+analysis,analysis.video_analysis.color_tone,categorical_scalar,warm_tone,0.7064017660044151,0.7553992968357609,0.04899753083134584,0.015518059461738211

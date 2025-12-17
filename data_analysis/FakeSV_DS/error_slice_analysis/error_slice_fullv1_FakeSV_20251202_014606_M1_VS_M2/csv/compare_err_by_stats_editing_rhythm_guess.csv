@@ -1,0 +1,5 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+stats.editing_rhythm_guess,fast,68,0.19117647058823528,0.14705882352941177,-0.04411764705882351
+stats.editing_rhythm_guess,moderate,67,0.208955223880597,0.22388059701492538,0.014925373134328374
+stats.editing_rhythm_guess,slow,336,0.1488095238095238,0.1488095238095238,0.0
+stats.editing_rhythm_guess,very_fast,71,0.1267605633802817,0.11267605633802817,-0.014084507042253516

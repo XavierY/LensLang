@@ -1,0 +1,4 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+stats.lighting.condition,bright_sunny,11,0.2727272727272727,0.18181818181818182,-0.09090909090909088
+stats.lighting.condition,dim_low_light,195,0.19487179487179487,0.18461538461538463,-0.010256410256410248
+stats.lighting.condition,overcast_neutral,93,0.16129032258064516,0.1935483870967742,0.03225806451612903

@@ -1,0 +1,5 @@
+token,index_in_block
+unknown,0
+high_contrast,1
+medium_contrast,2
+soft_low_contrast,3

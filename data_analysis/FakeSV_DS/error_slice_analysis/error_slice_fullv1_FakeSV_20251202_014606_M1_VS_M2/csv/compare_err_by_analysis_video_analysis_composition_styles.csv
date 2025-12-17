@@ -1,0 +1,3 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+analysis.video_analysis.composition_styles,rule_of_thirds,541,0.1589648798521257,0.1534195933456562,-0.005545286506469516
+analysis.video_analysis.composition_styles,symmetrical_composition,1,0.0,0.0,0.0

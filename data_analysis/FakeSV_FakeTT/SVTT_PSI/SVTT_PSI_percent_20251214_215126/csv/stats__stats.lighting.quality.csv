@@ -1,0 +1,4 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+stats,stats.lighting.quality,categorical_scalar,high_contrast,0.6285871964679912,0.7227523857358111,0.09416518926781992,0.041352115384848766
+stats,stats.lighting.quality,categorical_scalar,medium_contrast,0.33995584988962474,0.2501255650426921,-0.08983028484693262,0.041352115384848766
+stats,stats.lighting.quality,categorical_scalar,soft_low_contrast,0.03145695364238411,0.027122049221496736,-0.004334904420887371,0.041352115384848766

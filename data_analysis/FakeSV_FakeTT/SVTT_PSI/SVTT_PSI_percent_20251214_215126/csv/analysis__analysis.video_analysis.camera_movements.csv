@@ -1,0 +1,6 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+analysis,analysis.video_analysis.camera_movements,categorical_multilabel,static_shot,0.6499310344827586,0.6187845303867403,-0.031146504096018268,0.005816279425741949
+analysis,analysis.video_analysis.camera_movements,categorical_multilabel,tilt_vertical,0.10317241379310345,0.10095429432446007,-0.0022181194686433786,0.005816279425741949
+analysis,analysis.video_analysis.camera_movements,categorical_multilabel,pan_horizontal,0.10289655172413793,0.11752887995981919,0.014632328235681252,0.005816279425741949
+analysis,analysis.video_analysis.camera_movements,categorical_multilabel,dolly_in,0.09048275862068965,0.10195881466599699,0.01147605604530734,0.005816279425741949
+analysis,analysis.video_analysis.camera_movements,categorical_multilabel,dolly_out,0.05351724137931035,0.06077348066298342,0.007256239283673076,0.005816279425741949

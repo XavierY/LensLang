@@ -1,0 +1,58 @@
+{
+  "video_id": "6859419506465312006",
+  "stats": {
+    "video_name": "6859419506465312006.mp4",
+    "num_shots": 6,
+    "avg_shot_len_sec": 2.478,
+    "cuts_per_30s": 9.978,
+    "editing_rhythm_guess": "very_fast",
+    "lighting": {
+      "quality": "medium_contrast",
+      "condition": "overcast_neutral",
+      "color_temperature": "warm_tone",
+      "s_mean": 0.398,
+      "v_mean": 0.513,
+      "v_std": 0.183
+    },
+    "movement_counts": {
+      "static_shot": 2,
+      "pan_horizontal": 1,
+      "tilt_vertical": 2,
+      "dolly_in": 1,
+      "dolly_out": 0
+    }
+  },
+  "analysis": {
+    "video_analysis": {
+      "shot_types": [
+        "medium_shot"
+      ],
+      "camera_movements": [
+        "static_shot"
+      ],
+      "editing_rhythm": "very_fast",
+      "composition_styles": [
+        "rule_of_thirds"
+      ],
+      "color_tone": "warm_tone",
+      "lighting_style": "medium_contrast",
+      "overall_style": [
+        "documentary_style",
+        "narrative_style",
+        "warm_mood"
+      ],
+      "confidence_score": 0.3
+    },
+    "style_tags": [
+      "static_shot",
+      "very_fast",
+      "medium_shot",
+      "medium_contrast",
+      "documentary_style",
+      "warm_tone",
+      "warm_mood",
+      "narrative_style",
+      "rule_of_thirds"
+    ]
+  }
+}

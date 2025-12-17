@@ -1,0 +1,4 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+analysis,analysis.video_analysis.shot_types,categorical_multilabel,medium_shot,0.9953129307968017,0.9984932194876946,0.0031802886908929295,0.006138956971411987
+analysis,analysis.video_analysis.shot_types,categorical_multilabel,long_shot,0.0041356492969396195,0.0015067805123053742,-0.002628868784634245,0.006138956971411987
+analysis,analysis.video_analysis.shot_types,categorical_multilabel,close_shot,0.0005514199062586159,0.0,-0.0005514199062586159,0.006138956971411987

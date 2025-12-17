@@ -1,0 +1,3 @@
+section,sv_missing_rate,tt_missing_rate,sv_n,sv_mean,sv_std,sv_min,sv_p01,sv_p05,sv_p25,sv_p50,sv_p75,sv_p95,sv_p99,sv_max,tt_n,tt_mean,tt_std,tt_min,tt_p01,tt_p05,tt_p25,tt_p50,tt_p75,tt_p95,tt_p99,tt_max,ks_stat,wasserstein,group,field,kind,psi,bins,winsor_lo,winsor_hi,plot_range_lo,plot_range_hi,bin_left,bin_right,sv_pct,tt_pct,pct_diff
+summary,0.0,0.0,3624.0,0.30238686534216336,0.033928951277125134,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.85,1991.0,0.3030637870416875,0.035088400230863744,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.3,0.8,0.003571535485845244,0.0008744302451539843,analysis,analysis.video_analysis.confidence_score,numeric_scalar,0.0,10.0,0.01,0.99,-0.2,0.8,,,,,
+bin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,-0.2,0.8,1.0,1.0,0.0

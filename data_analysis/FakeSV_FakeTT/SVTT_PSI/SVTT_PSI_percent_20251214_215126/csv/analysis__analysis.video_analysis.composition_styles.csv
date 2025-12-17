@@ -1,0 +1,6 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+analysis,analysis.video_analysis.composition_styles,categorical_multilabel,rule_of_thirds,0.9955898566703418,0.9964894684052157,0.0008996117348738508,0.0089636279212028
+analysis,analysis.video_analysis.composition_styles,categorical_multilabel,symmetrical_composition,0.0033076074972436605,0.0015045135406218655,-0.001803093956621795,0.0089636279212028
+analysis,analysis.video_analysis.composition_styles,categorical_multilabel,negative_space,0.0005512679162072767,0.0015045135406218655,0.0009532456244145887,0.0089636279212028
+analysis,analysis.video_analysis.composition_styles,categorical_multilabel,centered_composition,0.0005512679162072767,0.0,-0.0005512679162072767,0.0089636279212028
+analysis,analysis.video_analysis.composition_styles,categorical_multilabel,low_angle_perspective,0.0,0.0005015045135406219,0.0005015045135406219,0.0089636279212028

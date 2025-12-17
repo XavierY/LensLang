@@ -1,0 +1,58 @@
+{
+  "video_id": "3xwcs3a222actke",
+  "stats": {
+    "video_name": "3xwcs3a222actke.mp4",
+    "num_shots": 28,
+    "avg_shot_len_sec": 3.483,
+    "cuts_per_30s": 8.215,
+    "editing_rhythm_guess": "very_fast",
+    "lighting": {
+      "quality": "medium_contrast",
+      "condition": "dim_low_light",
+      "color_temperature": "warm_tone",
+      "s_mean": 0.194,
+      "v_mean": 0.28,
+      "v_std": 0.201
+    },
+    "movement_counts": {
+      "static_shot": 11,
+      "pan_horizontal": 4,
+      "tilt_vertical": 5,
+      "dolly_in": 4,
+      "dolly_out": 4
+    }
+  },
+  "analysis": {
+    "video_analysis": {
+      "shot_types": [
+        "medium_shot"
+      ],
+      "camera_movements": [
+        "static_shot"
+      ],
+      "editing_rhythm": "very_fast",
+      "composition_styles": [
+        "rule_of_thirds"
+      ],
+      "color_tone": "warm_tone",
+      "lighting_style": "medium_contrast",
+      "overall_style": [
+        "documentary_style",
+        "narrative_style",
+        "warm_mood"
+      ],
+      "confidence_score": 0.3
+    },
+    "style_tags": [
+      "static_shot",
+      "very_fast",
+      "medium_shot",
+      "medium_contrast",
+      "documentary_style",
+      "warm_mood",
+      "rule_of_thirds",
+      "narrative_style",
+      "warm_tone"
+    ]
+  }
+}

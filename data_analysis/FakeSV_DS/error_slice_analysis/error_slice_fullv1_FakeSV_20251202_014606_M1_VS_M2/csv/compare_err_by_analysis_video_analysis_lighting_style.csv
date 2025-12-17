@@ -1,0 +1,4 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+analysis.video_analysis.lighting_style,high_contrast,351,0.14814814814814814,0.14814814814814814,0.0
+analysis.video_analysis.lighting_style,medium_contrast,173,0.19653179190751446,0.1676300578034682,-0.028901734104046256
+analysis.video_analysis.lighting_style,soft_low_contrast,18,0.0,0.1111111111111111,0.1111111111111111

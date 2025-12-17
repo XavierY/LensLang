@@ -1,0 +1,697 @@
+Namespace(dataset='fakett', mode='train', epoches=30, batch_size=128, early_stop=5, seed=2023, gpu='0', lr=0.0001, alpha=1.0, beta=1.0, inference_ckp=None, path_ckp='./checkpoints/', path_tb='./tensorboard/')
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:103: UserWarning: torch.range is deprecated and will be removed in a future release because its behavior is inconsistent with Python's range builtin. Instead, use torch.arange, which produces values in [start, end).
+  self.absolute_bin_edges=torch.quantile(torch.tensor(self.all_seg_duration).to(torch.float64),torch.range(0,1,0.01).to(torch.float64)).cuda()
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:104: UserWarning: torch.range is deprecated and will be removed in a future release because its behavior is inconsistent with Python's range builtin. Instead, use torch.arange, which produces values in [start, end).
+  self.relative_bin_edges=torch.quantile(torch.tensor( self.all_seg_dura_ratio).to(torch.float64),torch.range(0,1,0.02).to(torch.float64)).cuda()
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:112: UserWarning: torch.range is deprecated and will be removed in a future release because its behavior is inconsistent with Python's range builtin. Instead, use torch.arange, which produces values in [start, end).
+  self.ocr_absolute_bin_edges=torch.quantile(torch.tensor(self.ocr_all_seg_duration).to(torch.float64),torch.range(0,1,0.01).to(torch.float64)).cuda()
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:113: UserWarning: torch.range is deprecated and will be removed in a future release because its behavior is inconsistent with Python's range builtin. Instead, use torch.arange, which produces values in [start, end).
+  self.ocr_relative_bin_edges=torch.quantile(torch.tensor( self.ocr_all_seg_dura_ratio).to(torch.float64),torch.range(0,1,0.02).to(torch.float64)).cuda()
+data load time: 11.02
+--------------------------------------------------
+Epoch 0/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:19, 25.93s/it] 18%|█▊        | 2/11 [00:53<04:00, 26.72s/it] 27%|██▋       | 3/11 [01:16<03:22, 25.35s/it] 36%|███▋      | 4/11 [01:42<02:56, 25.25s/it] 45%|████▌     | 5/11 [02:05<02:28, 24.73s/it] 55%|█████▍    | 6/11 [02:29<02:01, 24.22s/it] 64%|██████▎   | 7/11 [02:55<01:39, 24.93s/it] 73%|███████▎  | 8/11 [03:19<01:13, 24.50s/it] 82%|████████▏ | 9/11 [03:42<00:48, 24.09s/it] 91%|█████████ | 10/11 [04:08<00:24, 24.83s/it]100%|██████████| 11/11 [04:30<00:00, 23.80s/it]100%|██████████| 11/11 [04:30<00:00, 24.56s/it]
+Train Loss: 1.9950 
+{'auc': 0.4828236980410894, 'f1': 0.47904852290660815, 'recall': 0.4828236980410894, 'precision': 0.48057766618129055, 'acc': 0.5527638190954773}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:26<00:53, 26.60s/it] 67%|██████▋   | 2/3 [00:54<00:27, 27.40s/it]100%|██████████| 3/3 [01:04<00:00, 19.55s/it]100%|██████████| 3/3 [01:04<00:00, 21.59s/it]
+Val Loss: 2.0786 
+/data/hyan671/envs/lenslang/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1731: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", result.shape[0])
+{'auc': 0.5, 'f1': 0.3528138528138528, 'recall': 0.5, 'precision': 0.2725752508361204, 'acc': 0.5451505016722408}
+--------------------------------------------------
+Epoch 1/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:23<03:53, 23.35s/it] 18%|█▊        | 2/11 [00:47<03:36, 24.08s/it] 27%|██▋       | 3/11 [01:15<03:25, 25.72s/it] 36%|███▋      | 4/11 [01:40<02:58, 25.45s/it] 45%|████▌     | 5/11 [02:02<02:24, 24.04s/it] 55%|█████▍    | 6/11 [02:27<02:02, 24.47s/it] 64%|██████▎   | 7/11 [02:51<01:37, 24.46s/it] 73%|███████▎  | 8/11 [03:18<01:15, 25.06s/it] 82%|████████▏ | 9/11 [03:44<00:50, 25.32s/it] 91%|█████████ | 10/11 [04:08<00:25, 25.03s/it]100%|██████████| 11/11 [04:28<00:00, 23.47s/it]100%|██████████| 11/11 [04:28<00:00, 24.41s/it]
+Train Loss: 1.8491 
+{'auc': 0.5139433030737379, 'f1': 0.4254026595894066, 'recall': 0.5139433030737378, 'precision': 0.7964925012094823, 'acc': 0.6625987078248384}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:55, 27.93s/it] 67%|██████▋   | 2/3 [00:54<00:27, 27.07s/it]100%|██████████| 3/3 [01:04<00:00, 19.36s/it]100%|██████████| 3/3 [01:04<00:00, 21.53s/it]
+Val Loss: 2.0782 
+{'auc': 0.5263442800433057, 'f1': 0.41278830783283854, 'recall': 0.5263442800433057, 'precision': 0.7237547892720306, 'acc': 0.568561872909699}
+--------------------------------------------------
+Epoch 2/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:23<03:57, 23.71s/it] 18%|█▊        | 2/11 [00:46<03:29, 23.28s/it] 27%|██▋       | 3/11 [01:13<03:19, 24.90s/it] 36%|███▋      | 4/11 [01:38<02:53, 24.77s/it] 45%|████▌     | 5/11 [02:01<02:25, 24.33s/it] 55%|█████▍    | 6/11 [02:25<02:00, 24.08s/it] 64%|██████▎   | 7/11 [02:51<01:39, 24.79s/it] 73%|███████▎  | 8/11 [03:17<01:15, 25.26s/it] 82%|████████▏ | 9/11 [03:40<00:48, 24.46s/it] 91%|█████████ | 10/11 [04:03<00:24, 24.11s/it]100%|██████████| 11/11 [04:27<00:00, 24.10s/it]100%|██████████| 11/11 [04:27<00:00, 24.35s/it]
+Train Loss: 1.7595 
+{'auc': 0.5924430641821946, 'f1': 0.5784146069132494, 'recall': 0.5924430641821946, 'precision': 0.7192079026306135, 'acc': 0.7042354630294329}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:28<00:57, 28.78s/it] 67%|██████▋   | 2/3 [00:56<00:28, 28.32s/it]100%|██████████| 3/3 [01:05<00:00, 19.43s/it]100%|██████████| 3/3 [01:05<00:00, 21.87s/it]
+Val Loss: 2.0457 
+{'auc': 0.5937161674485745, 'f1': 0.5520599250936329, 'recall': 0.5937161674485745, 'precision': 0.6924680377987771, 'acc': 0.6254180602006689}
+--------------------------------------------------
+Epoch 3/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:10, 25.07s/it] 18%|█▊        | 2/11 [00:51<03:53, 25.93s/it] 27%|██▋       | 3/11 [01:17<03:28, 26.11s/it] 36%|███▋      | 4/11 [01:43<03:00, 25.76s/it] 45%|████▌     | 5/11 [02:04<02:25, 24.28s/it] 55%|█████▍    | 6/11 [02:30<02:03, 24.64s/it] 64%|██████▎   | 7/11 [02:55<01:39, 24.97s/it] 73%|███████▎  | 8/11 [03:19<01:13, 24.57s/it] 82%|████████▏ | 9/11 [03:41<00:47, 23.63s/it] 91%|█████████ | 10/11 [04:07<00:24, 24.61s/it]100%|██████████| 11/11 [04:28<00:00, 23.38s/it]100%|██████████| 11/11 [04:28<00:00, 24.41s/it]
+Train Loss: 1.5947 
+{'auc': 0.6982799808886766, 'f1': 0.7108961269415915, 'recall': 0.6982799808886766, 'precision': 0.7572268495835375, 'acc': 0.7638190954773869}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:54, 27.42s/it] 67%|██████▋   | 2/3 [00:55<00:28, 28.06s/it]100%|██████████| 3/3 [01:04<00:00, 19.38s/it]100%|██████████| 3/3 [01:04<00:00, 21.66s/it]
+Val Loss: 1.9770 
+{'auc': 0.6721174666185493, 'f1': 0.665255062305296, 'recall': 0.6721174666185493, 'precision': 0.721342383107089, 'acc': 0.6923076923076923}
+--------------------------------------------------
+Epoch 4/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:11, 25.19s/it] 18%|█▊        | 2/11 [00:48<03:38, 24.23s/it] 27%|██▋       | 3/11 [01:12<03:12, 24.07s/it] 36%|███▋      | 4/11 [01:41<03:00, 25.77s/it] 45%|████▌     | 5/11 [02:06<02:33, 25.60s/it] 55%|█████▍    | 6/11 [02:30<02:06, 25.23s/it] 64%|██████▎   | 7/11 [02:56<01:41, 25.42s/it] 73%|███████▎  | 8/11 [03:24<01:18, 26.23s/it] 82%|████████▏ | 9/11 [03:49<00:51, 25.96s/it] 91%|█████████ | 10/11 [04:13<00:25, 25.22s/it]100%|██████████| 11/11 [04:35<00:00, 24.28s/it]100%|██████████| 11/11 [04:35<00:00, 25.06s/it]
+Train Loss: 1.4520 
+{'auc': 0.7888676540850453, 'f1': 0.7967070548290844, 'recall': 0.7888676540850454, 'precision': 0.8082132921624889, 'acc': 0.8212491026561378}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:29<00:58, 29.07s/it] 67%|██████▋   | 2/3 [00:56<00:28, 28.35s/it]100%|██████████| 3/3 [01:05<00:00, 19.50s/it]100%|██████████| 3/3 [01:05<00:00, 21.96s/it]
+Val Loss: 1.8251 
+{'auc': 0.7302417899675208, 'f1': 0.7302417899675208, 'recall': 0.7302417899675208, 'precision': 0.7302417899675208, 'acc': 0.7324414715719063}
+saved ./checkpoints/fakett/FakingRecipe_val_4_0.7302
+--------------------------------------------------
+Epoch 5/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:26<04:22, 26.20s/it] 18%|█▊        | 2/11 [00:51<03:53, 25.93s/it] 27%|██▋       | 3/11 [01:16<03:20, 25.08s/it] 36%|███▋      | 4/11 [01:41<02:56, 25.17s/it] 45%|████▌     | 5/11 [02:06<02:30, 25.02s/it] 55%|█████▍    | 6/11 [02:30<02:03, 24.69s/it] 64%|██████▎   | 7/11 [02:53<01:37, 24.38s/it] 73%|███████▎  | 8/11 [03:19<01:13, 24.63s/it] 82%|████████▏ | 9/11 [03:46<00:50, 25.38s/it] 91%|█████████ | 10/11 [04:07<00:24, 24.18s/it]100%|██████████| 11/11 [04:30<00:00, 23.72s/it]100%|██████████| 11/11 [04:30<00:00, 24.57s/it]
+Train Loss: 1.3229 
+{'auc': 0.817749641662685, 'f1': 0.8252525128758081, 'recall': 0.8177496416626852, 'precision': 0.8355561909246862, 'acc': 0.8456568557071069}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:28<00:57, 28.54s/it] 67%|██████▋   | 2/3 [00:56<00:28, 28.13s/it]100%|██████████| 3/3 [01:04<00:00, 19.05s/it]100%|██████████| 3/3 [01:04<00:00, 21.54s/it]
+Val Loss: 1.8771 
+{'auc': 0.744947672320462, 'f1': 0.7443064182194616, 'recall': 0.744947672320462, 'precision': 0.7439353099730459, 'acc': 0.745819397993311}
+saved ./checkpoints/fakett/FakingRecipe_val_5_0.7443
+--------------------------------------------------
+Epoch 6/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:14, 25.44s/it] 18%|█▊        | 2/11 [00:48<03:34, 23.79s/it] 27%|██▋       | 3/11 [01:12<03:12, 24.11s/it] 36%|███▋      | 4/11 [01:35<02:45, 23.61s/it] 45%|████▌     | 5/11 [02:00<02:24, 24.05s/it] 55%|█████▍    | 6/11 [02:23<01:59, 23.90s/it] 64%|██████▎   | 7/11 [02:49<01:37, 24.46s/it] 73%|███████▎  | 8/11 [03:13<01:13, 24.46s/it] 82%|████████▏ | 9/11 [03:39<00:49, 24.89s/it] 91%|█████████ | 10/11 [04:05<00:25, 25.19s/it]100%|██████████| 11/11 [04:28<00:00, 24.46s/it]100%|██████████| 11/11 [04:28<00:00, 24.40s/it]
+Train Loss: 1.2328 
+{'auc': 0.8458273610447523, 'f1': 0.8505282031401434, 'recall': 0.8458273610447523, 'precision': 0.8561505658520583, 'acc': 0.8664752333094041}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:26<00:53, 26.81s/it] 67%|██████▋   | 2/3 [00:55<00:28, 28.12s/it]100%|██████████| 3/3 [01:04<00:00, 19.36s/it]100%|██████████| 3/3 [01:04<00:00, 21.60s/it]
+Val Loss: 1.8162 
+{'auc': 0.7516690725369903, 'f1': 0.7487592009590285, 'recall': 0.7516690725369903, 'precision': 0.7496420261320924, 'acc': 0.7491638795986622}
+saved ./checkpoints/fakett/FakingRecipe_val_6_0.7488
+--------------------------------------------------
+Epoch 7/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:24<04:08, 24.80s/it] 18%|█▊        | 2/11 [00:50<03:48, 25.41s/it] 27%|██▋       | 3/11 [01:16<03:24, 25.57s/it] 36%|███▋      | 4/11 [01:40<02:53, 24.82s/it] 45%|████▌     | 5/11 [02:04<02:28, 24.75s/it] 55%|█████▍    | 6/11 [02:30<02:05, 25.16s/it] 64%|██████▎   | 7/11 [02:54<01:38, 24.61s/it] 73%|███████▎  | 8/11 [03:19<01:14, 24.69s/it] 82%|████████▏ | 9/11 [03:41<00:47, 23.98s/it] 91%|█████████ | 10/11 [04:08<00:24, 24.94s/it]100%|██████████| 11/11 [04:28<00:00, 23.43s/it]100%|██████████| 11/11 [04:28<00:00, 24.41s/it]
+Train Loss: 1.0996 
+{'auc': 0.8755534320751711, 'f1': 0.8773795642133663, 'recall': 0.8755534320751712, 'precision': 0.8793248460336428, 'acc': 0.8894472361809045}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:26<00:53, 26.88s/it] 67%|██████▋   | 2/3 [00:53<00:26, 26.79s/it]100%|██████████| 3/3 [01:04<00:00, 19.75s/it]100%|██████████| 3/3 [01:04<00:00, 21.66s/it]
+Val Loss: 1.9331 
+{'auc': 0.727241970407795, 'f1': 0.7285614525139665, 'recall': 0.727241970407795, 'precision': 0.7483974358974359, 'acc': 0.7391304347826086}
+--------------------------------------------------
+Epoch 8/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:12, 25.25s/it] 18%|█▊        | 2/11 [00:49<03:39, 24.41s/it] 27%|██▋       | 3/11 [01:13<03:16, 24.53s/it] 36%|███▋      | 4/11 [01:38<02:51, 24.56s/it] 45%|████▌     | 5/11 [02:02<02:25, 24.31s/it] 55%|█████▍    | 6/11 [02:25<01:59, 23.97s/it] 64%|██████▎   | 7/11 [02:50<01:37, 24.29s/it] 73%|███████▎  | 8/11 [03:16<01:14, 24.91s/it] 82%|████████▏ | 9/11 [03:41<00:49, 24.90s/it] 91%|█████████ | 10/11 [04:07<00:25, 25.34s/it]100%|██████████| 11/11 [04:28<00:00, 23.82s/it]100%|██████████| 11/11 [04:28<00:00, 24.39s/it]
+Train Loss: 0.9692 
+{'auc': 0.8977384933906672, 'f1': 0.8996741889018451, 'recall': 0.8977384933906674, 'precision': 0.9017326960198548, 'acc': 0.9095477386934674}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:54, 27.28s/it] 67%|██████▋   | 2/3 [00:56<00:28, 28.14s/it]100%|██████████| 3/3 [01:04<00:00, 19.20s/it]100%|██████████| 3/3 [01:04<00:00, 21.53s/it]
+Val Loss: 1.7825 
+{'auc': 0.7615030674846626, 'f1': 0.7610019701660569, 'recall': 0.7615030674846626, 'precision': 0.7606564748201439, 'acc': 0.7625418060200669}
+saved ./checkpoints/fakett/FakingRecipe_val_8_0.7610
+--------------------------------------------------
+Epoch 9/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:30<05:07, 30.80s/it] 18%|█▊        | 2/11 [00:54<04:01, 26.87s/it] 27%|██▋       | 3/11 [01:22<03:38, 27.28s/it] 36%|███▋      | 4/11 [01:48<03:06, 26.67s/it] 45%|████▌     | 5/11 [02:09<02:28, 24.77s/it] 55%|█████▍    | 6/11 [02:32<02:00, 24.05s/it] 64%|██████▎   | 7/11 [02:57<01:37, 24.32s/it] 73%|███████▎  | 8/11 [03:20<01:12, 24.01s/it] 82%|████████▏ | 9/11 [03:45<00:48, 24.18s/it] 91%|█████████ | 10/11 [04:09<00:24, 24.35s/it]100%|██████████| 11/11 [04:28<00:00, 22.59s/it]100%|██████████| 11/11 [04:28<00:00, 24.42s/it]
+Train Loss: 0.8334 
+{'auc': 0.9265567765567765, 'f1': 0.926349636975667, 'recall': 0.9265567765567766, 'precision': 0.9261437507387102, 'acc': 0.9332376166547021}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:55, 27.72s/it] 67%|██████▋   | 2/3 [00:54<00:27, 27.41s/it]100%|██████████| 3/3 [01:04<00:00, 19.37s/it]100%|██████████| 3/3 [01:04<00:00, 21.57s/it]
+Val Loss: 1.8589 
+{'auc': 0.7523457235654999, 'f1': 0.7541118421052632, 'recall': 0.7523457235654998, 'precision': 0.7604283054003724, 'acc': 0.7591973244147158}
+--------------------------------------------------
+Epoch 10/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:24<04:02, 24.22s/it] 18%|█▊        | 2/11 [00:48<03:40, 24.54s/it] 27%|██▋       | 3/11 [01:13<03:15, 24.46s/it] 36%|███▋      | 4/11 [01:38<02:52, 24.59s/it] 45%|████▌     | 5/11 [02:02<02:26, 24.43s/it] 55%|█████▍    | 6/11 [02:29<02:06, 25.32s/it] 64%|██████▎   | 7/11 [02:54<01:40, 25.15s/it] 73%|███████▎  | 8/11 [03:18<01:15, 25.01s/it] 82%|████████▏ | 9/11 [03:43<00:50, 25.03s/it] 91%|█████████ | 10/11 [04:08<00:24, 24.83s/it]100%|██████████| 11/11 [04:29<00:00, 23.58s/it]100%|██████████| 11/11 [04:29<00:00, 24.46s/it]
+Train Loss: 0.7217 
+{'auc': 0.9388756171364867, 'f1': 0.9403713159061762, 'recall': 0.9388756171364867, 'precision': 0.9419302071973827, 'acc': 0.9461593682699211}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:28<00:57, 28.96s/it] 67%|██████▋   | 2/3 [00:56<00:27, 27.88s/it]100%|██████████| 3/3 [01:04<00:00, 19.11s/it]100%|██████████| 3/3 [01:04<00:00, 21.58s/it]
+Val Loss: 1.8687 
+{'auc': 0.7798854204258391, 'f1': 0.7783692722371968, 'recall': 0.779885420425839, 'precision': 0.7779793906810035, 'acc': 0.7792642140468228}
+saved ./checkpoints/fakett/FakingRecipe_val_10_0.7784
+--------------------------------------------------
+Epoch 11/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:25<04:13, 25.34s/it] 18%|█▊        | 2/11 [00:48<03:34, 23.78s/it] 27%|██▋       | 3/11 [01:13<03:16, 24.58s/it] 36%|███▋      | 4/11 [01:37<02:50, 24.32s/it] 45%|████▌     | 5/11 [02:04<02:31, 25.17s/it] 55%|█████▍    | 6/11 [02:28<02:04, 25.00s/it] 64%|██████▎   | 7/11 [02:55<01:41, 25.45s/it] 73%|███████▎  | 8/11 [03:17<01:13, 24.53s/it] 82%|████████▏ | 9/11 [03:42<00:49, 24.53s/it] 91%|█████████ | 10/11 [04:05<00:24, 24.13s/it]100%|██████████| 11/11 [04:28<00:00, 23.76s/it]100%|██████████| 11/11 [04:28<00:00, 24.40s/it]
+Train Loss: 0.6533 
+{'auc': 0.9634257047300526, 'f1': 0.962078211986334, 'recall': 0.9634257047300525, 'precision': 0.9607775937890222, 'acc': 0.9655419956927495}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:26<00:53, 26.69s/it] 67%|██████▋   | 2/3 [00:56<00:28, 28.29s/it]100%|██████████| 3/3 [01:04<00:00, 19.36s/it]100%|██████████| 3/3 [01:04<00:00, 21.61s/it]
+Val Loss: 2.0049 
+{'auc': 0.7492782389029232, 'f1': 0.7509385305293426, 'recall': 0.7492782389029231, 'precision': 0.7565697836382208, 'acc': 0.7558528428093646}
+--------------------------------------------------
+Epoch 12/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:24<04:03, 24.37s/it] 18%|█▊        | 2/11 [00:46<03:26, 22.91s/it] 27%|██▋       | 3/11 [01:12<03:15, 24.41s/it] 36%|███▋      | 4/11 [01:36<02:48, 24.13s/it] 45%|████▌     | 5/11 [02:03<02:32, 25.41s/it] 55%|█████▍    | 6/11 [02:29<02:06, 25.39s/it] 64%|██████▎   | 7/11 [02:53<01:40, 25.03s/it] 73%|███████▎  | 8/11 [03:17<01:14, 24.80s/it] 82%|████████▏ | 9/11 [03:44<00:50, 25.25s/it] 91%|█████████ | 10/11 [04:08<00:24, 24.91s/it]100%|██████████| 11/11 [04:29<00:00, 23.80s/it]100%|██████████| 11/11 [04:29<00:00, 24.50s/it]
+Train Loss: 0.5631 
+{'auc': 0.9715400541487498, 'f1': 0.9722280608516196, 'recall': 0.9715400541487498, 'precision': 0.9729280759401242, 'acc': 0.9748743718592965}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:55, 27.81s/it] 67%|██████▋   | 2/3 [00:55<00:27, 27.56s/it]100%|██████████| 3/3 [01:04<00:00, 19.34s/it]100%|██████████| 3/3 [01:04<00:00, 21.58s/it]
+Val Loss: 2.0984 
+{'auc': 0.7713145073980512, 'f1': 0.7709741371541858, 'recall': 0.7713145073980512, 'precision': 0.770703933747412, 'acc': 0.7725752508361204}
+--------------------------------------------------
+Epoch 13/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:24<04:09, 24.92s/it] 18%|█▊        | 2/11 [00:50<03:49, 25.55s/it] 27%|██▋       | 3/11 [01:16<03:23, 25.43s/it] 36%|███▋      | 4/11 [01:39<02:51, 24.51s/it] 45%|████▌     | 5/11 [02:04<02:27, 24.58s/it] 55%|█████▍    | 6/11 [02:31<02:07, 25.41s/it] 64%|██████▎   | 7/11 [02:54<01:39, 24.93s/it] 73%|███████▎  | 8/11 [03:19<01:14, 24.71s/it] 82%|████████▏ | 9/11 [03:42<00:48, 24.25s/it] 91%|█████████ | 10/11 [04:06<00:24, 24.21s/it]100%|██████████| 11/11 [04:29<00:00, 23.85s/it]100%|██████████| 11/11 [04:29<00:00, 24.51s/it]
+Train Loss: 0.4887 
+{'auc': 0.9862239210065297, 'f1': 0.9857519842893381, 'recall': 0.9862239210065298, 'precision': 0.9852854353058722, 'acc': 0.9870782483847811}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:28<00:56, 28.14s/it] 67%|██████▋   | 2/3 [00:54<00:27, 27.17s/it]100%|██████████| 3/3 [01:05<00:00, 19.54s/it]100%|██████████| 3/3 [01:05<00:00, 21.70s/it]
+Val Loss: 2.1258 
+{'auc': 0.7664426199927823, 'f1': 0.7682170542635659, 'recall': 0.7664426199927823, 'precision': 0.773525053255534, 'acc': 0.7725752508361204}
+--------------------------------------------------
+Epoch 14/29
+--------------------------------------------------
+----------
+TRAIN
+----------
+  0%|          | 0/11 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+  9%|▉         | 1/11 [00:24<04:06, 24.63s/it] 18%|█▊        | 2/11 [00:49<03:41, 24.60s/it] 27%|██▋       | 3/11 [01:15<03:21, 25.20s/it] 36%|███▋      | 4/11 [01:37<02:48, 24.02s/it] 45%|████▌     | 5/11 [02:02<02:26, 24.40s/it] 55%|█████▍    | 6/11 [02:27<02:03, 24.63s/it] 64%|██████▎   | 7/11 [02:51<01:37, 24.45s/it] 73%|███████▎  | 8/11 [03:16<01:13, 24.67s/it] 82%|████████▏ | 9/11 [03:41<00:49, 24.68s/it] 91%|█████████ | 10/11 [04:08<00:25, 25.55s/it]100%|██████████| 11/11 [04:29<00:00, 23.95s/it]100%|██████████| 11/11 [04:29<00:00, 24.47s/it]
+Train Loss: 0.4382 
+{'auc': 0.9909778627169932, 'f1': 0.9905013228595587, 'recall': 0.9909778627169932, 'precision': 0.9900302011898815, 'acc': 0.9913854989231874}
+----------
+VAL
+----------
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:27<00:54, 27.46s/it] 67%|██████▋   | 2/3 [00:54<00:27, 27.17s/it]100%|██████████| 3/3 [01:04<00:00, 19.57s/it]100%|██████████| 3/3 [01:04<00:00, 21.65s/it]
+Val Loss: 2.1847 
+{'auc': 0.7786674485745217, 'f1': 0.7779503105590062, 'recall': 0.7786674485745219, 'precision': 0.7775157232704403, 'acc': 0.7792642140468228}
+early stop at epoch 14
+Training complete in 83m 35s
+Best model on val: epoch10_0.7783692722371968
+  0%|          | 0/3 [00:00<?, ?it/s]/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:125: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  ocr_pattern_fea = torch.tensor(ocr_pattern_fea)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:323: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x = torch.tensor(x, dtype=torch.float32)
+/data/hyan671/yhproject/FakingRecipe/utils/dataloader.py:335: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  [torch.tensor(item['all_phrase_emo_fea'], dtype=torch.float32) for item in batch]
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:128: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:133: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_absolute_bin_edges, torch.tensor(dv,dtype=torch.float64))
+/data/hyan671/yhproject/FakingRecipe/model/FakingRecipe.py:139: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.detach().clone() or sourceTensor.detach().clone().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  bucket_indice=torch.searchsorted(self.ocr_relative_bin_edges, torch.tensor(dv,dtype=torch.float64))
+ 33%|███▎      | 1/3 [00:31<01:03, 31.80s/it] 67%|██████▋   | 2/3 [01:02<00:31, 31.29s/it]100%|██████████| 3/3 [01:12<00:00, 21.60s/it]100%|██████████| 3/3 [01:12<00:00, 24.27s/it]
+Testing complete in 1m 13s
+Saved test result to: ./predict_result/FakeTT/train_20251129_000126/label_train_20251129_000126.csv
+0.8127090301003345
+              precision    recall  f1-score   support
+
+        real     0.8830    0.8300    0.8557       200
+        fake     0.6937    0.7778    0.7333        99
+
+    accuracy                         0.8127       299
+   macro avg     0.7883    0.8039    0.7945       299
+weighted avg     0.8203    0.8127    0.8152       299
+
+[[166  34]
+ [ 22  77]]
+None
+{'auc': 0.8038888888888889, 'f1': 0.7945017182130584, 'recall': 0.8038888888888889, 'precision': 0.7883362085489745, 'acc': 0.8127090301003345}
+PYTHON_EXIT_CODE=0

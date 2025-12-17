@@ -1,0 +1,7 @@
+token,index_in_block
+unknown,0
+dolly_in,1
+dolly_out,2
+pan_horizontal,3
+static_shot,4
+tilt_vertical,5

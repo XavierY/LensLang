@@ -1,0 +1,167 @@
+feature,slice_value,support,lens_error_rate
+stats.num_shots,"(0.999, 2.0]",282,0.16312056737588654
+stats.num_shots,"(2.0, 6.0]",146,0.14383561643835616
+stats.num_shots,"(6.0, 140.0]",114,0.14035087719298245
+stats.avg_shot_len_sec,"(0.612, 4.331]",136,0.11764705882352941
+stats.avg_shot_len_sec,"(4.331, 8.884]",135,0.2
+stats.avg_shot_len_sec,"(8.884, 23.025]",135,0.22962962962962963
+stats.avg_shot_len_sec,"(23.025, 265.165]",136,0.0661764705882353
+stats.cuts_per_30s,"(-0.001, 1.78]",271,0.13653136531365315
+stats.cuts_per_30s,"(1.78, 5.064]",135,0.2074074074074074
+stats.cuts_per_30s,"(5.064, 42.308]",136,0.1323529411764706
+stats.lighting.s_mean,"(-0.001, 0.168]",137,0.10948905109489052
+stats.lighting.s_mean,"(0.168, 0.27]",134,0.14925373134328357
+stats.lighting.s_mean,"(0.27, 0.408]",135,0.18518518518518517
+stats.lighting.s_mean,"(0.408, 0.915]",136,0.16911764705882354
+stats.lighting.v_mean,"(-0.001, 0.368]",136,0.14705882352941177
+stats.lighting.v_mean,"(0.368, 0.51]",135,0.14814814814814814
+stats.lighting.v_mean,"(0.51, 0.618]",135,0.1259259259259259
+stats.lighting.v_mean,"(0.618, 1.0]",136,0.19117647058823528
+stats.lighting.v_std,"(-0.001, 0.209]",140,0.16428571428571428
+stats.lighting.v_std,"(0.209, 0.256]",132,0.15151515151515152
+stats.lighting.v_std,"(0.256, 0.297]",134,0.11194029850746269
+stats.lighting.v_std,"(0.297, 0.468]",136,0.18382352941176472
+stats.movement_counts.static_shot,"(-0.001, 1.0]",291,0.1718213058419244
+stats.movement_counts.static_shot,"(1.0, 3.0]",125,0.128
+stats.movement_counts.static_shot,"(3.0, 64.0]",126,0.1349206349206349
+stats.movement_counts.pan_horizontal,"(-0.001, 1.0]",455,0.15164835164835164
+stats.movement_counts.pan_horizontal,"(1.0, 41.0]",87,0.16091954022988506
+stats.movement_counts.tilt_vertical,"(-0.001, 1.0]",476,0.15336134453781514
+stats.movement_counts.tilt_vertical,"(1.0, 34.0]",66,0.15151515151515152
+stats.movement_counts.dolly_in,"(-0.001, 1.0]",484,0.14669421487603307
+stats.movement_counts.dolly_in,"(1.0, 21.0]",58,0.20689655172413793
+stats.editing_rhythm_guess,fast,68,0.14705882352941177
+stats.editing_rhythm_guess,moderate,67,0.22388059701492538
+stats.editing_rhythm_guess,slow,336,0.1488095238095238
+stats.editing_rhythm_guess,very_fast,71,0.11267605633802817
+stats.lighting.quality,high_contrast,351,0.14814814814814814
+stats.lighting.quality,medium_contrast,173,0.1676300578034682
+stats.lighting.quality,soft_low_contrast,18,0.1111111111111111
+stats.lighting.condition,bright_sunny,62,0.12903225806451613
+stats.lighting.condition,dim_low_light,210,0.1380952380952381
+stats.lighting.condition,overcast_neutral,270,0.17037037037037037
+stats.lighting.color_temperature,cool_tone,171,0.13450292397660818
+stats.lighting.color_temperature,warm_tone,371,0.16172506738544473
+analysis.video_analysis.editing_rhythm,fast,68,0.14705882352941177
+analysis.video_analysis.editing_rhythm,moderate,67,0.22388059701492538
+analysis.video_analysis.editing_rhythm,slow,336,0.1488095238095238
+analysis.video_analysis.editing_rhythm,very_fast,71,0.11267605633802817
+analysis.video_analysis.color_tone,cool_tone,171,0.13450292397660818
+analysis.video_analysis.color_tone,warm_tone,371,0.16172506738544473
+analysis.video_analysis.lighting_style,high_contrast,351,0.14814814814814814
+analysis.video_analysis.lighting_style,medium_contrast,173,0.1676300578034682
+analysis.video_analysis.lighting_style,soft_low_contrast,18,0.1111111111111111
+analysis.video_analysis.shot_types,long_shot,1,0.0
+analysis.video_analysis.shot_types,medium_shot,541,0.1534195933456562
+analysis.video_analysis.camera_movements,dolly_in,59,0.1864406779661017
+analysis.video_analysis.camera_movements,dolly_out,16,0.1875
+analysis.video_analysis.camera_movements,pan_horizontal,48,0.25
+analysis.video_analysis.camera_movements,static_shot,375,0.14133333333333334
+analysis.video_analysis.camera_movements,tilt_vertical,44,0.09090909090909091
+analysis.video_analysis.composition_styles,rule_of_thirds,541,0.1534195933456562
+analysis.video_analysis.composition_styles,symmetrical_composition,1,0.0
+analysis.video_analysis.overall_style,documentary_style|narrative_style,170,0.13529411764705881
+analysis.video_analysis.overall_style,documentary_style|narrative_style|warm_mood,370,0.16216216216216217
+analysis.video_analysis.overall_style,documentary_style|warm_mood,1,0.0
+analysis.video_analysis.overall_style,warm_mood,1,0.0
+analysis.style_tags,cool_tone|dolly_in|medium_shot|high_contrast|documentary_style|slow|rule_of_thirds|narrative_style,8,0.125
+analysis.style_tags,cool_tone|dolly_in|medium_shot|medium_contrast|documentary_style|slow|rule_of_thirds|narrative_style,3,0.0
+analysis.style_tags,cool_tone|dolly_in|very_fast|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,cool_tone|dolly_in|very_fast|medium_shot|medium_contrast|documentary_style|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,cool_tone|fast|dolly_in|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style,6,0.0
+analysis.style_tags,cool_tone|fast|static_shot|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style,16,0.0625
+analysis.style_tags,cool_tone|fast|static_shot|medium_shot|medium_contrast|documentary_style|rule_of_thirds|narrative_style,5,0.6
+analysis.style_tags,cool_tone|medium_shot|documentary_style|tilt_vertical|slow|soft_low_contrast|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,cool_tone|medium_shot|high_contrast|documentary_style|tilt_vertical|slow|rule_of_thirds|narrative_style,4,0.25
+analysis.style_tags,cool_tone|medium_shot|medium_contrast|documentary_style|slow|rule_of_thirds|narrative_style|dolly_out,2,0.0
+analysis.style_tags,cool_tone|medium_shot|medium_contrast|documentary_style|tilt_vertical|slow|rule_of_thirds|narrative_style,2,0.0
+analysis.style_tags,cool_tone|slow|narrative_style|rule_of_thirds|documentary_style|high_contrast|medium_shot,2,0.0
+analysis.style_tags,cool_tone|slow|narrative_style|rule_of_thirds|documentary_style|medium_contrast|medium_shot,1,0.0
+analysis.style_tags,cool_tone|static_shot|medium_shot|documentary_style|slow|soft_low_contrast|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,cool_tone|static_shot|medium_shot|high_contrast|documentary_style|slow|rule_of_thirds|narrative_style,25,0.16
+analysis.style_tags,cool_tone|static_shot|medium_shot|high_contrast|moderate|documentary_style|rule_of_thirds|narrative_style,6,0.16666666666666666
+analysis.style_tags,cool_tone|static_shot|medium_shot|medium_contrast|documentary_style|slow|rule_of_thirds|narrative_style,25,0.04
+analysis.style_tags,cool_tone|static_shot|medium_shot|medium_contrast|moderate|documentary_style|rule_of_thirds|narrative_style,5,0.4
+analysis.style_tags,cool_tone|static_shot|medium_shot|moderate|documentary_style|soft_low_contrast|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,cool_tone|static_shot|very_fast|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style,8,0.125
+analysis.style_tags,cool_tone|static_shot|very_fast|medium_shot|medium_contrast|documentary_style|rule_of_thirds|narrative_style,8,0.0
+analysis.style_tags,cool_tone|very_fast|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style|dolly_out,1,1.0
+analysis.style_tags,cool_tone|very_fast|medium_shot|medium_contrast|documentary_style|tilt_vertical|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,dolly_in|medium_shot|high_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,18,0.16666666666666666
+analysis.style_tags,dolly_in|medium_shot|high_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,dolly_in|medium_shot|medium_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,8,0.375
+analysis.style_tags,dolly_in|medium_shot|medium_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,1.0
+analysis.style_tags,dolly_in|very_fast|medium_shot|documentary_style|warm_mood|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,dolly_in|very_fast|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,2,0.5
+analysis.style_tags,dolly_in|very_fast|medium_shot|medium_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,dolly_out|high_contrast|narrative_style|cool_tone|slow|rule_of_thirds|medium_shot|documentary_style,2,0.0
+analysis.style_tags,fast|dolly_in|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,fast|medium_shot|high_contrast|documentary_style|warm_mood|tilt_vertical|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,fast|static_shot|medium_shot|documentary_style|warm_mood|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,fast|static_shot|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,24,0.125
+analysis.style_tags,fast|static_shot|medium_shot|medium_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,8,0.125
+analysis.style_tags,high_contrast|narrative_style|cool_tone|slow|rule_of_thirds|medium_shot|tilt_vertical|documentary_style,1,0.0
+analysis.style_tags,high_contrast|narrative_style|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|fast|warm_mood|warm_tone,1,0.0
+analysis.style_tags,high_contrast|narrative_style|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|very_fast|warm_mood|warm_tone,1,0.0
+analysis.style_tags,high_contrast|narrative_style|slow|dolly_in|rule_of_thirds|medium_shot|documentary_style|warm_mood|warm_tone,3,0.0
+analysis.style_tags,high_contrast|narrative_style|slow|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|warm_mood|warm_tone,1,0.0
+analysis.style_tags,high_contrast|narrative_style|slow|rule_of_thirds|medium_shot|tilt_vertical|documentary_style|warm_mood|warm_tone,1,0.0
+analysis.style_tags,high_contrast|narrative_style|static_shot|cool_tone|rule_of_thirds|medium_shot|documentary_style|fast,1,0.0
+analysis.style_tags,high_contrast|narrative_style|static_shot|cool_tone|rule_of_thirds|medium_shot|documentary_style|very_fast,3,0.3333333333333333
+analysis.style_tags,high_contrast|narrative_style|static_shot|cool_tone|slow|rule_of_thirds|medium_shot|documentary_style,3,0.0
+analysis.style_tags,high_contrast|narrative_style|static_shot|rule_of_thirds|medium_shot|documentary_style|moderate|warm_mood|warm_tone,3,0.0
+analysis.style_tags,high_contrast|narrative_style|static_shot|rule_of_thirds|medium_shot|documentary_style|very_fast|warm_mood|warm_tone,5,0.2
+analysis.style_tags,high_contrast|narrative_style|static_shot|slow|rule_of_thirds|medium_shot|documentary_style|warm_mood|warm_tone,6,0.16666666666666666
+analysis.style_tags,medium_shot|high_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone|dolly_out,6,0.16666666666666666
+analysis.style_tags,medium_shot|high_contrast|documentary_style|warm_mood|tilt_vertical|slow|rule_of_thirds|narrative_style|warm_tone,19,0.10526315789473684
+analysis.style_tags,medium_shot|high_contrast|moderate|documentary_style|tilt_vertical|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,1.0
+analysis.style_tags,medium_shot|medium_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone|dolly_out,3,0.0
+analysis.style_tags,medium_shot|medium_contrast|documentary_style|warm_mood|tilt_vertical|slow|rule_of_thirds|narrative_style|warm_tone,6,0.0
+analysis.style_tags,medium_shot|medium_contrast|moderate|documentary_style|tilt_vertical|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,narrative_style|cool_tone|dolly_in|rule_of_thirds|medium_shot|documentary_style|medium_contrast|very_fast,1,1.0
+analysis.style_tags,narrative_style|cool_tone|rule_of_thirds|medium_shot|tilt_vertical|documentary_style|medium_contrast|moderate,1,0.0
+analysis.style_tags,narrative_style|cool_tone|slow|dolly_in|rule_of_thirds|medium_shot|documentary_style|medium_contrast,1,0.0
+analysis.style_tags,narrative_style|cool_tone|slow|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|medium_contrast,1,1.0
+analysis.style_tags,narrative_style|cool_tone|slow|pan_horizontal|soft_low_contrast|rule_of_thirds|medium_shot|documentary_style,1,0.0
+analysis.style_tags,narrative_style|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|medium_contrast|moderate|warm_mood|warm_tone,1,0.0
+analysis.style_tags,narrative_style|slow|dolly_in|rule_of_thirds|medium_shot|documentary_style|medium_contrast|warm_mood|warm_tone,1,1.0
+analysis.style_tags,narrative_style|slow|pan_horizontal|rule_of_thirds|medium_shot|documentary_style|medium_contrast|warm_mood|warm_tone,3,0.0
+analysis.style_tags,narrative_style|slow|soft_low_contrast|rule_of_thirds|medium_shot|tilt_vertical|documentary_style|warm_mood|warm_tone,1,0.0
+analysis.style_tags,narrative_style|static_shot|cool_tone|rule_of_thirds|medium_shot|documentary_style|medium_contrast|moderate,3,0.0
+analysis.style_tags,narrative_style|static_shot|cool_tone|slow|rule_of_thirds|medium_shot|documentary_style|medium_contrast,5,0.0
+analysis.style_tags,narrative_style|static_shot|rule_of_thirds|medium_shot|documentary_style|fast|medium_contrast|warm_mood|warm_tone,2,0.5
+analysis.style_tags,narrative_style|static_shot|rule_of_thirds|medium_shot|documentary_style|medium_contrast|moderate|warm_mood|warm_tone,2,0.5
+analysis.style_tags,narrative_style|static_shot|rule_of_thirds|medium_shot|documentary_style|medium_contrast|very_fast|warm_mood|warm_tone,1,0.0
+analysis.style_tags,narrative_style|static_shot|slow|rule_of_thirds|medium_shot|documentary_style|medium_contrast|warm_mood|warm_tone,8,0.25
+analysis.style_tags,pan_horizontal|cool_tone|fast|medium_shot|high_contrast|documentary_style|rule_of_thirds|narrative_style,2,0.5
+analysis.style_tags,pan_horizontal|cool_tone|medium_shot|high_contrast|documentary_style|slow|rule_of_thirds|narrative_style,5,0.0
+analysis.style_tags,pan_horizontal|cool_tone|medium_shot|high_contrast|moderate|documentary_style|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,pan_horizontal|cool_tone|medium_shot|medium_contrast|moderate|documentary_style|rule_of_thirds|narrative_style,3,0.6666666666666666
+analysis.style_tags,pan_horizontal|cool_tone|medium_shot|moderate|documentary_style|soft_low_contrast|rule_of_thirds|narrative_style,1,1.0
+analysis.style_tags,pan_horizontal|cool_tone|very_fast|medium_shot|medium_contrast|documentary_style|rule_of_thirds|narrative_style,1,0.0
+analysis.style_tags,pan_horizontal|medium_shot|documentary_style|warm_mood|slow|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,2,0.5
+analysis.style_tags,pan_horizontal|medium_shot|high_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,10,0.4
+analysis.style_tags,pan_horizontal|medium_shot|high_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,2,0.0
+analysis.style_tags,pan_horizontal|medium_shot|medium_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,4,0.0
+analysis.style_tags,pan_horizontal|medium_shot|medium_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,pan_horizontal|medium_shot|moderate|documentary_style|warm_mood|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,pan_horizontal|very_fast|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,3,0.3333333333333333
+analysis.style_tags,pan_horizontal|very_fast|medium_shot|medium_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,3,0.3333333333333333
+analysis.style_tags,slow|cool_tone|narrative_style|rule_of_thirds|documentary_style|dolly_in|medium_contrast|medium_shot,1,0.0
+analysis.style_tags,slow|narrative_style|rule_of_thirds|warm_tone|documentary_style|warm_mood|high_contrast|dolly_out|medium_shot,1,1.0
+analysis.style_tags,slow|narrative_style|rule_of_thirds|warm_tone|documentary_style|warm_mood|high_contrast|medium_shot,12,0.16666666666666666
+analysis.style_tags,slow|narrative_style|rule_of_thirds|warm_tone|documentary_style|warm_mood|static_shot|high_contrast|medium_shot,1,0.0
+analysis.style_tags,static_shot|long_shot|cool_tone|soft_low_contrast|documentary_style|warm_mood,1,0.0
+analysis.style_tags,static_shot|medium_shot|documentary_style|warm_mood|slow|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,3,0.0
+analysis.style_tags,static_shot|medium_shot|high_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,94,0.1595744680851064
+analysis.style_tags,static_shot|medium_shot|high_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,17,0.23529411764705882
+analysis.style_tags,static_shot|medium_shot|medium_contrast|documentary_style|warm_mood|slow|rule_of_thirds|narrative_style|warm_tone,29,0.20689655172413793
+analysis.style_tags,static_shot|medium_shot|medium_contrast|moderate|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,13,0.15384615384615385
+analysis.style_tags,static_shot|medium_shot|moderate|documentary_style|warm_mood|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,2,0.0
+analysis.style_tags,static_shot|very_fast|medium_shot|documentary_style|warm_mood|soft_low_contrast|rule_of_thirds|narrative_style|warm_tone,1,0.0
+analysis.style_tags,static_shot|very_fast|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,18,0.0
+analysis.style_tags,static_shot|very_fast|medium_shot|medium_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone,5,0.0
+analysis.style_tags,static_shot|warm_tone|high_contrast|medium_shot|rule_of_thirds,1,0.0
+analysis.style_tags,very_fast|medium_shot|high_contrast|documentary_style|warm_mood|rule_of_thirds|narrative_style|warm_tone|dolly_out,1,0.0
+analysis.style_tags,very_fast|medium_shot|high_contrast|documentary_style|warm_mood|tilt_vertical|rule_of_thirds|narrative_style|warm_tone,2,0.0
+analysis.style_tags,very_fast|medium_shot|medium_contrast|documentary_style|warm_mood|tilt_vertical|rule_of_thirds|narrative_style|warm_tone,2,0.0

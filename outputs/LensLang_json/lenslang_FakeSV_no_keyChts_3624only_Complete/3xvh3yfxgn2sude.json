@@ -1,0 +1,58 @@
+{
+  "video_id": "3xvh3yfxgn2sude",
+  "stats": {
+    "video_name": "3xvh3yfxgn2sude.mp4",
+    "num_shots": 13,
+    "avg_shot_len_sec": 4.948,
+    "cuts_per_30s": 5.556,
+    "editing_rhythm_guess": "fast",
+    "lighting": {
+      "quality": "medium_contrast",
+      "condition": "overcast_neutral",
+      "color_temperature": "warm_tone",
+      "s_mean": 0.342,
+      "v_mean": 0.508,
+      "v_std": 0.171
+    },
+    "movement_counts": {
+      "static_shot": 2,
+      "pan_horizontal": 6,
+      "tilt_vertical": 2,
+      "dolly_in": 3,
+      "dolly_out": 0
+    }
+  },
+  "analysis": {
+    "video_analysis": {
+      "shot_types": [
+        "medium_shot"
+      ],
+      "camera_movements": [
+        "pan_horizontal"
+      ],
+      "editing_rhythm": "fast",
+      "composition_styles": [
+        "rule_of_thirds"
+      ],
+      "color_tone": "warm_tone",
+      "lighting_style": "medium_contrast",
+      "overall_style": [
+        "documentary_style",
+        "narrative_style",
+        "warm_mood"
+      ],
+      "confidence_score": 0.3
+    },
+    "style_tags": [
+      "pan_horizontal",
+      "fast",
+      "medium_shot",
+      "medium_contrast",
+      "documentary_style",
+      "warm_mood",
+      "rule_of_thirds",
+      "narrative_style",
+      "warm_tone"
+    ]
+  }
+}

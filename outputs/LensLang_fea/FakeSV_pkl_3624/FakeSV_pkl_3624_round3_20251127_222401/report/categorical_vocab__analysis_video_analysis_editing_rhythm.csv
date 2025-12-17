@@ -1,0 +1,6 @@
+token,index_in_block
+unknown,0
+fast,1
+moderate,2
+slow,3
+very_fast,4

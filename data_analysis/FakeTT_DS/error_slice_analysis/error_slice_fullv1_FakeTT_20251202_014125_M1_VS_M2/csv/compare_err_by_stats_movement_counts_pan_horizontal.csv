@@ -1,0 +1,3 @@
+feature,slice_value,support,base_error_rate,lens_error_rate,delta_error
+stats.movement_counts.pan_horizontal,"(-0.001, 1.0]",252,0.19047619047619047,0.1865079365079365,-0.003968253968253954
+stats.movement_counts.pan_horizontal,"(1.0, 17.0]",47,0.1702127659574468,0.19148936170212766,0.021276595744680854

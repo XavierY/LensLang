@@ -1,0 +1,5 @@
+group,field,kind,value,sv_pct,tt_pct,pct_diff,psi_total
+analysis,analysis.video_analysis.editing_rhythm,categorical_scalar,fast,0.13300220750551878,0.0718232044198895,-0.06117900308562928,0.1604637374606448
+analysis,analysis.video_analysis.editing_rhythm,categorical_scalar,moderate,0.15149006622516556,0.09944751381215469,-0.05204255241301087,0.1604637374606448
+analysis,analysis.video_analysis.editing_rhythm,categorical_scalar,slow,0.5855408388520972,0.7674535409342039,0.18191270208210675,0.1604637374606448
+analysis,analysis.video_analysis.editing_rhythm,categorical_scalar,very_fast,0.12996688741721854,0.06127574083375188,-0.06869114658346666,0.1604637374606448

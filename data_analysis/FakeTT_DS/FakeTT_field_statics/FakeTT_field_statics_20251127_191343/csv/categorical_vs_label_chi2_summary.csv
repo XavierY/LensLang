@@ -1,0 +1,13 @@
+field,chi2,p_value,dof,n_categories
+analysis.style_tags,18.24297195951833,0.7910652530724824,24,25
+stats.lighting.condition,9.766894189826013,0.007570871482971803,2,3
+analysis.video_analysis.lighting_style,8.33782140581988,0.015469101396806838,2,3
+stats.lighting.quality,8.33782140581988,0.015469101396806838,2,3
+stats.editing_rhythm_guess,5.041333186698135,0.16879542490049468,3,4
+analysis.video_analysis.editing_rhythm,5.041333186698135,0.16879542490049468,3,4
+analysis.video_analysis.composition_styles,2.876394539604729,0.4110779181954184,3,4
+analysis.video_analysis.camera_movements,1.6193212694362609,0.8053153801931255,4,5
+analysis.video_analysis.overall_style,0.16594070717546178,0.9967425567325963,4,5
+stats.lighting.color_temperature,0.08977943639743169,0.7644577440046398,1,2
+analysis.video_analysis.color_tone,0.08977943639743169,0.7644577440046398,1,2
+analysis.video_analysis.shot_types,0.0,1.0,1,2

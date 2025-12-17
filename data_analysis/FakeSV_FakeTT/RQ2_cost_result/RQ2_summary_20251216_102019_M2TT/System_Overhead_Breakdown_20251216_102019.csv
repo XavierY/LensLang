@@ -1,0 +1,18 @@
+dataset,model,epoch,train_elapsed_sec,val_elapsed_sec,train_elapsed_hms,val_elapsed_hms,test_elapsed_hms,test_elapsed_sec,notes
+FakeTT,M2,0,274.0,67.0,04:34,01:07,,,
+FakeTT,M2,1,277.0,66.0,04:37,01:06,,,
+FakeTT,M2,2,274.0,66.0,04:34,01:06,,,
+FakeTT,M2,3,273.0,65.0,04:33,01:05,,,
+FakeTT,M2,4,273.0,66.0,04:33,01:06,,,
+FakeTT,M2,5,273.0,66.0,04:33,01:06,,,
+FakeTT,M2,6,272.0,65.0,04:32,01:05,,,
+FakeTT,M2,7,273.0,65.0,04:33,01:05,,,
+FakeTT,M2,8,273.0,65.0,04:33,01:05,,,
+FakeTT,M2,9,272.0,65.0,04:32,01:05,,,
+FakeTT,M2,10,272.0,65.0,04:32,01:05,,,
+FakeTT,M2,11,272.0,65.0,04:32,01:05,,,
+FakeTT,M2,12,273.0,66.0,04:33,01:06,,,
+FakeTT,M2,13,274.0,65.0,04:34,01:05,,,
+FakeTT,M2,14,273.0,66.0,04:33,01:06,,,
+FakeTT,M2,15,273.0,65.0,04:33,01:05,,,
+FakeTT,M2,ALL,4371.0,1048.0,01:12:51,17:28,01:13,73.0,TRAIN/VAL elapsed: first tqdm 100% after each phase marker; TEST elapsed: test tqdm 100% preferred (fallback to last unassigned 100% / 'Testing complete in').
